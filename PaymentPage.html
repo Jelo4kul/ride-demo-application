@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Payment App</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Flutterwave Test">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="text-center">
+        <h2 id="payment-header">Payment Page</h2>
+        <p>Powered by Flutterwave</p>
+        <div class="thin-line col-sm-6 col-sm-offset-3" name="thin-line"></div>
+      </div>
+
+      <div class="center-layout col-sm-6 col-sm-offset-3">
+        <ul class="nav nav-tabs">
+          <li class="active"><a data-toggle="tab" href="#personal-info" id="first-tab">Personal Details</a></li>
+          <li><a data-toggle="tab" href="#checkout" id="sec-tab">Checkout</a></li>
+        </ul>
+        <br>
+
+        <!-- tab content -->
+        <div class="tab-content">
+          <div id="personal-info" class="tab-pane fade in active">
+
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Enter email">
+              </div>
+              <div class="form-group">
+                <label for="phoneNo">Mobile Number:</label>
+                <input type="number" name="phoneNo" id="phoneNo" class="form-control input-lg" placeholder="Enter mobile number">
+              </div>
+              <button class="btn btn-default cust-btn" type="submit" onclick="switchTab()">Proceed</button>
+
+          </div>
+          <div id="checkout" class="tab-pane fade">
+            <form action="paymentstatus.html" id="paymentForm" onsubmit="return payWithRave()">
+              <div class="form-group">
+                <label for="amount">Amount:</label>
+                <input type="number" name="amount" id="amount" class="form-control input-lg" placeholder="Enter amount">
+              </div>
+              <div class="form-group">
+                <label for="currency">Currency:</label>
+                <select class="form-control input-lg" id="currency" name="currencies">
+                  <option value="NGN">Naira</option>
+                </select>
+              </div>
+              <input type="hidden" name="txref" value="" id="hiddenTxRef" />
+              <button class="btn btn-default cust-btn" type="submit">Pay for Ride</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  <script type="text/javascript" src="flutterscript.js"></script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+body {
+  background-color: #3A2778;
+  color: white;
+  margin: 100px 0px 0px
+}
+
+.row {
+  margin-top:70px;
+}
+
+#bvn-validation, #payment-header {
+  font-size: 30px;
+}
+
+.thin-line {
+    margin-top: 40px;
+    margin-bottom: 35px;
+    height: 1px;
+    background: rgb(104, 90, 150);
+    background: linear-gradient(to right, rgba(104,90,150,0), rgba(104,90,150,1), rgba(104,90,150,0));
+}
+
+.center-layout {
+  color: black;
+  background: white;
+  border-radius: 5px;
+  padding: 40px;
+}
+
+.cust-btn {
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: #443181;
+  color: white;
+  padding: 15px;
+  width: 100%;
+}
